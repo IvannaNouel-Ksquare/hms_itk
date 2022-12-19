@@ -1,15 +1,16 @@
 import { DataTypes, Model, InferCreationAttributes } from "sequelize";
 import { sequelize } from ".";
-import { Role } from "./roleModel";
 
 export class User extends Model<InferCreationAttributes<User>> {
-    declare user_id: number;
+    [x: string]: any;
+    declare user_id?: number;
     declare first_name: string;
     declare last_name: string;
     declare email: string;
     declare address: string;
-    declare phone_number: number;
+    declare phone_number: string;
     declare password: string;
+    declare deleted_at?: Date;
 
 }
 
@@ -20,31 +21,31 @@ User.init({
         autoIncrement: true,
     },
     first_name: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
     },
     last_name: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
     },
     email: {
         type: DataTypes.STRING,
     },
     address: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
     },
     phone_number: {
-        type: DataTypes.NUMBER,
+        type: DataTypes.STRING(20),
     },
     password: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
+    },
+    deleted_at: {
+        type: DataTypes.DATE,
     },
 }, {
-    sequelize
+    sequelize,
+    paranoid: true,
+    deletedAt: 'deleted_at',
 });
 
-
-User.hasOne(Role, {
-    foreignKey: 'role_id',
-    sourceKey: 'id',
-});
 
 

@@ -1,7 +1,5 @@
 import { DataTypes, Model, InferCreationAttributes } from "sequelize";
 import { sequelize } from ".";
-import { Appointment } from "./appointmentModel";
-import { User } from "./userModel";
 
 export class Patient extends Model<InferCreationAttributes<Patient>> {
     declare patient_id: number;
@@ -23,16 +21,6 @@ Patient.init({
     },
 }, {
     sequelize
-});
-
-Patient.hasMany(Appointment,{
-    foreignKey: 'appointment_id',
-    sourceKey: 'id',
-});
-
-Patient.hasOne(User,{
-    foreignKey: 'user_id',
-    sourceKey: 'id',
 });
 
 

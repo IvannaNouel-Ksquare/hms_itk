@@ -1,13 +1,12 @@
 import { DataTypes, Model, InferCreationAttributes } from "sequelize";
 import { sequelize } from ".";
-import { Doctor } from "./doctorModel";
-import { Patient } from "./patientModel";
 
 export class Appointment extends Model<InferCreationAttributes<Appointment>> {
-    declare appointment_id: number;
+    declare appointment_id?: number;
+    declare doctor_id?:number;
     declare date: number;
     declare reason: string;
-    declare assited: boolean;
+    declare assisted: boolean;
 
 }
 
@@ -17,25 +16,18 @@ Appointment.init({
         primaryKey: true,
         autoIncrement: true,
     },
+    doctor_id: {
+        type: DataTypes.INTEGER
+    },
     date: {
         type: DataTypes.DATE
     },
     reason: {
         type: DataTypes.TEXT
     },
-    assited: {
+    assisted: {
         type: DataTypes.BOOLEAN
     },
 }, {
     sequelize
 });
-
-Appointment.hasOne(Doctor,{
-    foreignKey: 'appointment_id',
-    sourceKey: 'id',
-})
-
-Appointment.hasOne(Patient,{
-    foreignKey: 'appointment_id',
-    sourceKey: 'id',
-})

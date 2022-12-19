@@ -8,13 +8,13 @@ export class Specialization extends Model<InferCreationAttributes<Specialization
 }
 
 Specialization.init({
-    specialization_name: {
-        type: DataTypes.STRING,
+    specialization_id: {
+        type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
     },
-    specialization_id: {
-        type: DataTypes.INTEGER,
+    specialization_name: {
+        type: DataTypes.STRING,
     },
 }, {
     sequelize

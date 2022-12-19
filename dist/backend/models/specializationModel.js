@@ -7,13 +7,13 @@ class Specialization extends sequelize_1.Model {
 }
 exports.Specialization = Specialization;
 Specialization.init({
-    specialization_name: {
-        type: sequelize_1.DataTypes.STRING,
+    specialization_id: {
+        type: sequelize_1.DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
     },
-    specialization_id: {
-        type: sequelize_1.DataTypes.INTEGER,
+    specialization_name: {
+        type: sequelize_1.DataTypes.STRING,
     },
 }, {
     sequelize: _1.sequelize
