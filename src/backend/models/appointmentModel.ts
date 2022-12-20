@@ -3,11 +3,11 @@ import { sequelize } from ".";
 
 export class Appointment extends Model<InferCreationAttributes<Appointment>> {
     declare appointment_id?: number;
-    declare doctor_id?:number;
+    declare doctor_id?: number;
     declare date: number;
     declare reason: string;
     declare assisted: boolean;
-
+    declare deleted_at?: Date;
 }
 
 Appointment.init({
@@ -28,6 +28,12 @@ Appointment.init({
     assisted: {
         type: DataTypes.BOOLEAN
     },
+    deleted_at: {
+        type: DataTypes.DATE,
+    },
 }, {
-    sequelize
+    sequelize,
+    paranoid: true,
+    deletedAt: 'deleted_at',
+
 });

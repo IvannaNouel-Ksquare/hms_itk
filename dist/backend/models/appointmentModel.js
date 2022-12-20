@@ -24,6 +24,11 @@ Appointment.init({
     assisted: {
         type: sequelize_1.DataTypes.BOOLEAN
     },
+    deleted_at: {
+        type: sequelize_1.DataTypes.DATE,
+    },
 }, {
-    sequelize: _1.sequelize
+    sequelize: _1.sequelize,
+    paranoid: true,
+    deletedAt: 'deleted_at',
 });

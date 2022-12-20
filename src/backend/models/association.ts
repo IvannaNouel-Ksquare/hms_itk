@@ -21,6 +21,9 @@ Doctor.hasMany(Appointment,{
     foreignKey: 'appointment_id',
     sourceKey: 'doctor_id',
 });
+Doctor.belongsTo(Appointment,{
+    foreignKey: 'doctor_id',
+})
 
 Doctor.hasOne(User,{
     foreignKey: 'user_id',
