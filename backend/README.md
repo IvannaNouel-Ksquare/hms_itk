@@ -58,6 +58,13 @@ GOOGLE_APPLICATION_CREDENTIALS=/Users/ivannanouel/Documents/corecourse/hmsitk-5c
 }
 
 ```
+## To run the project
+
+```
+npm run dev
+
+```
+
 ## Generate tokens for testing on postman
 
 -Generate your token for an admin user
