@@ -12,12 +12,20 @@ Patient.init({
         primaryKey: true,
         autoIncrement: true,
     },
+    user_id: {
+        type: sequelize_1.DataTypes.STRING
+    },
     age: {
         type: sequelize_1.DataTypes.DATE
     },
     gender: {
         type: sequelize_1.DataTypes.BOOLEAN
     },
+    deleted_at: {
+        type: sequelize_1.DataTypes.DATE,
+    },
 }, {
-    sequelize: _1.sequelize
+    sequelize: _1.sequelize,
+    paranoid: true,
+    deletedAt: 'deleted_at',
 });

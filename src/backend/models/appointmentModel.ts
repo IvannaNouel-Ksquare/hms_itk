@@ -3,7 +3,8 @@ import { sequelize } from ".";
 
 export class Appointment extends Model<InferCreationAttributes<Appointment>> {
     declare appointment_id?: number;
-    declare doctor_id?: number;
+    declare patient_id?:string;
+    declare doctor_id?: string;
     declare date: number;
     declare reason: string;
     declare assisted: boolean;
@@ -17,7 +18,10 @@ Appointment.init({
         autoIncrement: true,
     },
     doctor_id: {
-        type: DataTypes.INTEGER
+        type: DataTypes.STRING
+    },
+    patient_id: {
+        type: DataTypes.STRING
     },
     date: {
         type: DataTypes.DATE

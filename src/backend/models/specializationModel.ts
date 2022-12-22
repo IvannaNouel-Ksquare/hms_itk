@@ -1,8 +1,8 @@
-import { DataTypes, Model, InferCreationAttributes } from "sequelize";
+import { DataTypes, Model, InferCreationAttributes, CreationOptional } from "sequelize";
 import { sequelize } from ".";
 
 export class Specialization extends Model<InferCreationAttributes<Specialization>> {
-    declare specialization_id: number;
+    declare specialization_id: CreationOptional<number>;
     declare specialization_name: string;
 
 }

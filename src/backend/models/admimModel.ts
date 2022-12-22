@@ -1,29 +1,20 @@
 import { DataTypes, Model, InferCreationAttributes, CreationOptional } from "sequelize";
 import { sequelize } from ".";
 
-export class Patient extends Model<InferCreationAttributes<Patient>> {
-    declare patient_id: CreationOptional<number>;
+export class Admin extends Model<InferCreationAttributes<Admin>> {
+    declare admin_id: CreationOptional<number>;
     declare user_id: string;
-    declare age: number;
-    declare gender: string;
     declare deleted_at?: Date;
 
 }
-
-Patient.init({
-    patient_id: {
+Admin.init({
+    admin_id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
     },
     user_id: {
-        type: DataTypes.STRING
-    },
-    age: {
-        type: DataTypes.DATE
-    },
-    gender: {
-        type: DataTypes.BOOLEAN
+        type: DataTypes.STRING,
     },
     deleted_at: {
         type: DataTypes.DATE,
@@ -32,10 +23,5 @@ Patient.init({
     sequelize,
     paranoid: true,
     deletedAt: 'deleted_at',
-
 });
-
-
-
-
 

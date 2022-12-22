@@ -13,7 +13,10 @@ Appointment.init({
         autoIncrement: true,
     },
     doctor_id: {
-        type: sequelize_1.DataTypes.INTEGER
+        type: sequelize_1.DataTypes.STRING
+    },
+    patient_id: {
+        type: sequelize_1.DataTypes.STRING
     },
     date: {
         type: sequelize_1.DataTypes.DATE

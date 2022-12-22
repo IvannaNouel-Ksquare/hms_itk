@@ -5,14 +5,17 @@ import { isAuthorized } from "../middlewares/isAuthorized";
 
 const router = Router();
 
-const { SpecializationController } = controllers;
+const { adminController } = controllers;
 
-router.post("/newSpecialization",isAuthenticated, isAuthorized({
+router.post("/newAdmin", isAuthenticated, isAuthorized({
     role: ['admin'],
     allowSameUser: true
-}),SpecializationController.creatSpecialization);
+}),adminController.createAdmin);
+router.put("/disable/:uid", isAuthenticated, isAuthorized({
+    role: ['admin'],
+    allowSameUser: true
+}),adminController.disableUser);
 
-router.get("/:id", SpecializationController.getSpecializationbyId);
 
 export default router;
 
