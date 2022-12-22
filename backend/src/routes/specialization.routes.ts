@@ -12,7 +12,10 @@ router.post("/newSpecialization",isAuthenticated, isAuthorized({
     allowSameUser: true
 }),SpecializationController.creatSpecialization);
 
-router.get("/:id", SpecializationController.getSpecializationbyId);
+router.get("/:id",isAuthenticated, isAuthorized({
+    role: ['admin'],
+    allowSameUser: true
+}),SpecializationController.getSpecializationbyId);
 
 export default router;
 
