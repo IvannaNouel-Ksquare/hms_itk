@@ -1,0 +1,728 @@
+{
+	"info": {
+		"_postman_id": "28b943e0-207f-45ed-b457-29cee088f59c",
+		"name": "hms_itk",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13427554"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "User by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImFmZjFlNDJlNDE0M2I4MTQxM2VjMTI1MzQwOTcwODUxZThiNDdiM2YiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoidGVzdDQiLCJyb2xlIjoicGF0aWVudCIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9obXNpdGstNWNhZDgiLCJhdWQiOiJobXNpdGstNWNhZDgiLCJhdXRoX3RpbWUiOjE2NzE2NTM2ODEsInVzZXJfaWQiOiJUM1hvWkxzV3QzY1NsaGttbU9nVlRxZHgxUEYyIiwic3ViIjoiVDNYb1pMc1d0M2NTbGhrbW1PZ1ZUcWR4MVBGMiIsImlhdCI6MTY3MTY1MzY4MSwiZXhwIjoxNjcxNjU3MjgxLCJlbWFpbCI6InRlc3Q0QHRlc3QuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbInRlc3Q0QHRlc3QuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.a9_KCsO49xkSVTQ7Awfp5WEsVdidtXAFG0UmQGS_Kg68Los-G-KLQBCqhbxTPl7diUoQ7RrhT2X3HyAg5-YqHHrVyZ1_hkPog8uKFfkueN8Zof1XGCycAfQxQuFPIiVbuQ0K_D3N1AOqIY-ou0qLmbUcUPOIua5xwyxZa4kd18B1rBlFORUJgLXU6cC3WEis787TE4UReCBupqCsizmNhWugA7u4YeCekSfRZsykvBg9GUuX3ZssY89sgLNdvwGVhJZUmB2LnGRG0qULHT3RZm7I9fwhWhTeevdxMEUt5arapKdDF1-DHbdTOYLkIDPelA1PoBJppXkrc-KaQ_owsw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/user/T3XoZLsWt3cSlhkmmOgVTqdx1PF2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"T3XoZLsWt3cSlhkmmOgVTqdx1PF2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"displayName\": \"klk\",\n    \"email\": \"klk@paciente.com\",\n    \"password\": \"test1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/user/newUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"newUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Disable User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"disabled\":true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/user/disable/eP9Y5wphlxXzStO4uboMVqM4I972",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"disable",
+								"eP9Y5wphlxXzStO4uboMVqM4I972"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImFmZjFlNDJlNDE0M2I4MTQxM2VjMTI1MzQwOTcwODUxZThiNDdiM2YiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiU3VwZXJBZG1pbiIsInJvbGUiOiJhZG1pbiIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9obXNpdGstNWNhZDgiLCJhdWQiOiJobXNpdGstNWNhZDgiLCJhdXRoX3RpbWUiOjE2NzE2OTgwNDEsInVzZXJfaWQiOiJyY2Y0UVQwRVhzVFQxUW16U0FSSjQ5QVJvTVUyIiwic3ViIjoicmNmNFFUMEVYc1RUMVFtelNBUko0OUFSb01VMiIsImlhdCI6MTY3MTY5ODA0MSwiZXhwIjoxNjcxNzAxNjQxLCJlbWFpbCI6ImFkbWluQHRlc3QuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImFkbWluQHRlc3QuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.WHX-hmG5oBYCD23BAQeqOd_HCoTKXED-NnmfwOBUCo6r6YY6tre1K7qJ5t6_5Vkpri3nc9z8bw1opNYnVRla4DiYYZdo58Q9xMGuZDA-8eGCm8u0hqVLECTnWJ23xqlfOb62vYOd5uAa0FURAkqhKaQ61pDEMLiB4I0RvfYGD4S9wpza4lRTOryalkXQMKq0mfw3q1cNGhelFDsYYoIZahDvBp5SLb9BY3FOfMVJKyIU9J07pvZHTSPn1AN8u81qLTHFOaRfDS_noSUveZ2ySd9HLcql_ud6ejddMZZM2fHSJbDW0A_aKxo2gYazb4kLTBbCLhKsetn5utbSfkUheg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/user/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Appointment",
+			"item": [
+				{
+					"name": "All appointments",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImFmZjFlNDJlNDE0M2I4MTQxM2VjMTI1MzQwOTcwODUxZThiNDdiM2YiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiU3VwZXJBZG1pbiIsInJvbGUiOiJhZG1pbiIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9obXNpdGstNWNhZDgiLCJhdWQiOiJobXNpdGstNWNhZDgiLCJhdXRoX3RpbWUiOjE2NzE2OTYwMTYsInVzZXJfaWQiOiJyY2Y0UVQwRVhzVFQxUW16U0FSSjQ5QVJvTVUyIiwic3ViIjoicmNmNFFUMEVYc1RUMVFtelNBUko0OUFSb01VMiIsImlhdCI6MTY3MTY5NjAxNiwiZXhwIjoxNjcxNjk5NjE2LCJlbWFpbCI6ImFkbWluQHRlc3QuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImFkbWluQHRlc3QuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.BAwEAAPyxD1OnE97KGnzj0og9Y8C7ivx1MIF2dz2jYEXeP2N_NdiV1S9OZAgxBJbs4kMMd50e4AymYDRiKG4GVFivDa0MD2RIdSdVGB314G_qJb1o_h30clxtZNG1obNCFWLjJh8Rh-bShslIaYijaGTBeADpMhZheuVGdjM9a1OKLkdNR_rLVSo4i8Sy2MPQhUocSexvSdtrXHRB6D9LAV88cVsVV1ZC4cCuB05wvggIj9EOq60loX1i3a5dK1WA85NbKTDWN7b9xhtJX6wVO_jfyTRYCiI2ClgRrH6r0zAcZriA_yZ7z_3RGMpmGl2Zmo1rv85ZYpFXOQgQaDAZg",
+								"description": "Admin",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/appointment/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"appointment",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Appointment by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImFmZjFlNDJlNDE0M2I4MTQxM2VjMTI1MzQwOTcwODUxZThiNDdiM2YiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiU3VwZXJBZG1pbiIsInJvbGUiOiJhZG1pbiIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9obXNpdGstNWNhZDgiLCJhdWQiOiJobXNpdGstNWNhZDgiLCJhdXRoX3RpbWUiOjE2NzE2OTgwNDEsInVzZXJfaWQiOiJyY2Y0UVQwRVhzVFQxUW16U0FSSjQ5QVJvTVUyIiwic3ViIjoicmNmNFFUMEVYc1RUMVFtelNBUko0OUFSb01VMiIsImlhdCI6MTY3MTY5ODA0MSwiZXhwIjoxNjcxNzAxNjQxLCJlbWFpbCI6ImFkbWluQHRlc3QuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImFkbWluQHRlc3QuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.WHX-hmG5oBYCD23BAQeqOd_HCoTKXED-NnmfwOBUCo6r6YY6tre1K7qJ5t6_5Vkpri3nc9z8bw1opNYnVRla4DiYYZdo58Q9xMGuZDA-8eGCm8u0hqVLECTnWJ23xqlfOb62vYOd5uAa0FURAkqhKaQ61pDEMLiB4I0RvfYGD4S9wpza4lRTOryalkXQMKq0mfw3q1cNGhelFDsYYoIZahDvBp5SLb9BY3FOfMVJKyIU9J07pvZHTSPn1AN8u81qLTHFOaRfDS_noSUveZ2ySd9HLcql_ud6ejddMZZM2fHSJbDW0A_aKxo2gYazb4kLTBbCLhKsetn5utbSfkUheg",
+								"description": "Admin",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImFmZjFlNDJlNDE0M2I4MTQxM2VjMTI1MzQwOTcwODUxZThiNDdiM2YiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoia2xrIiwicm9sZSI6InBhdGllbnQiLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vaG1zaXRrLTVjYWQ4IiwiYXVkIjoiaG1zaXRrLTVjYWQ4IiwiYXV0aF90aW1lIjoxNjcxNjk4NTY4LCJ1c2VyX2lkIjoiTm9aWjdpT3dpYmJ1U1dveWk5SzhoalRkQk9qMiIsInN1YiI6Ik5vWlo3aU93aWJidVNXb3lpOUs4aGpUZEJPajIiLCJpYXQiOjE2NzE2OTg1NjgsImV4cCI6MTY3MTcwMjE2OCwiZW1haWwiOiJrbGtAcGFjaWVudGUuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImtsa0BwYWNpZW50ZS5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.VUDR9dWYyCM4sX2J4bgL9O2IhGOb0xEMByQvEHeGarAxj7cl1dyDTx4OUfyXNghxbi4DTbGE7ros_T1XYnsZF-RLLsJ2kUvRRKaXClRQgdO2rQAS0hlw1CIUvmy5nn6m1xCaaC9j8-pYofiYPrHsptuHiw5kGwn84swngZnp2t3rv1XludBuL6eceiJkv9F92DZVGv2-Eap5lrOi4ti-8-rN1oe1djBTkfXd8ZQ-DYRWmOWGrURuyhn9uKzpNOyjFHbnfLyLdE19jxS6SnRRCxZjP8jePGYsBeGHYaBw1RSP246ct-zoc7VldvLYdN8ZUPW3Amg9HX7JB5vEdpCN6Q",
+								"description": "Patient",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\":\"aloo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/appointment/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"appointment",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Appointment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImFmZjFlNDJlNDE0M2I4MTQxM2VjMTI1MzQwOTcwODUxZThiNDdiM2YiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiU3VwZXJBZG1pbiIsInJvbGUiOiJhZG1pbiIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9obXNpdGstNWNhZDgiLCJhdWQiOiJobXNpdGstNWNhZDgiLCJhdXRoX3RpbWUiOjE2NzE2OTM3MTEsInVzZXJfaWQiOiJyY2Y0UVQwRVhzVFQxUW16U0FSSjQ5QVJvTVUyIiwic3ViIjoicmNmNFFUMEVYc1RUMVFtelNBUko0OUFSb01VMiIsImlhdCI6MTY3MTY5MzcxMSwiZXhwIjoxNjcxNjk3MzExLCJlbWFpbCI6ImFkbWluQHRlc3QuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImFkbWluQHRlc3QuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.WsOJm-cXh4y9Nz5MC1IkuXQxegfQ4B_7TkXG7hMdxhXRSF7wuELPePxQEdKyl4LJDWeD4LdumvBE7fo514xftvSUXcKHgi_CPDqWMlMONvEVitZOTeERek-xffjmN2_FTD8wBIgvTQSXB8PJ2ilpDCIEJ6pD1k4Dg5jJlsYs-_-l3Pz6y-skCjHQJVuVzzfXeBj3b5kDDqcfWLzqjbJXEj6KDwrGANPeEV6-UF4spH_yoS3oeD0T8N6AJg4jGCHYR0ckQ2ZaPZbuoDc4JJUlr0DRFjCaGqi7eCFHR_u7rJSfkiH4T3pBqZ7co2HDVhHd3N19PLsvx8oZ6uUjIdClsA",
+								"description": "Admin",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImFmZjFlNDJlNDE0M2I4MTQxM2VjMTI1MzQwOTcwODUxZThiNDdiM2YiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoia2xrIiwicm9sZSI6InBhdGllbnQiLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vaG1zaXRrLTVjYWQ4IiwiYXVkIjoiaG1zaXRrLTVjYWQ4IiwiYXV0aF90aW1lIjoxNjcxNjk4NTY4LCJ1c2VyX2lkIjoiTm9aWjdpT3dpYmJ1U1dveWk5SzhoalRkQk9qMiIsInN1YiI6Ik5vWlo3aU93aWJidVNXb3lpOUs4aGpUZEJPajIiLCJpYXQiOjE2NzE2OTg1NjgsImV4cCI6MTY3MTcwMjE2OCwiZW1haWwiOiJrbGtAcGFjaWVudGUuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImtsa0BwYWNpZW50ZS5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.VUDR9dWYyCM4sX2J4bgL9O2IhGOb0xEMByQvEHeGarAxj7cl1dyDTx4OUfyXNghxbi4DTbGE7ros_T1XYnsZF-RLLsJ2kUvRRKaXClRQgdO2rQAS0hlw1CIUvmy5nn6m1xCaaC9j8-pYofiYPrHsptuHiw5kGwn84swngZnp2t3rv1XludBuL6eceiJkv9F92DZVGv2-Eap5lrOi4ti-8-rN1oe1djBTkfXd8ZQ-DYRWmOWGrURuyhn9uKzpNOyjFHbnfLyLdE19jxS6SnRRCxZjP8jePGYsBeGHYaBw1RSP246ct-zoc7VldvLYdN8ZUPW3Amg9HX7JB5vEdpCN6Q",
+								"description": "Patient",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"doctor_id\":\"8Ui00Lm2lpRdSwOy9WYbkqTJBXH2\",\n    \"date\" : \"2022-12-22\",\n    \"reason\" : \"appointment test 3\",\n    \"assisted\" : false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/appointment/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"appointment",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Appointment by id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImFmZjFlNDJlNDE0M2I4MTQxM2VjMTI1MzQwOTcwODUxZThiNDdiM2YiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiU3VwZXJBZG1pbiIsInJvbGUiOiJhZG1pbiIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9obXNpdGstNWNhZDgiLCJhdWQiOiJobXNpdGstNWNhZDgiLCJhdXRoX3RpbWUiOjE2NzE2OTgwNDEsInVzZXJfaWQiOiJyY2Y0UVQwRVhzVFQxUW16U0FSSjQ5QVJvTVUyIiwic3ViIjoicmNmNFFUMEVYc1RUMVFtelNBUko0OUFSb01VMiIsImlhdCI6MTY3MTY5ODA0MSwiZXhwIjoxNjcxNzAxNjQxLCJlbWFpbCI6ImFkbWluQHRlc3QuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImFkbWluQHRlc3QuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.WHX-hmG5oBYCD23BAQeqOd_HCoTKXED-NnmfwOBUCo6r6YY6tre1K7qJ5t6_5Vkpri3nc9z8bw1opNYnVRla4DiYYZdo58Q9xMGuZDA-8eGCm8u0hqVLECTnWJ23xqlfOb62vYOd5uAa0FURAkqhKaQ61pDEMLiB4I0RvfYGD4S9wpza4lRTOryalkXQMKq0mfw3q1cNGhelFDsYYoIZahDvBp5SLb9BY3FOfMVJKyIU9J07pvZHTSPn1AN8u81qLTHFOaRfDS_noSUveZ2ySd9HLcql_ud6ejddMZZM2fHSJbDW0A_aKxo2gYazb4kLTBbCLhKsetn5utbSfkUheg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/appointment/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"appointment",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Appointments pagination",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImFmZjFlNDJlNDE0M2I4MTQxM2VjMTI1MzQwOTcwODUxZThiNDdiM2YiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiU3VwZXJBZG1pbiIsInJvbGUiOiJhZG1pbiIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9obXNpdGstNWNhZDgiLCJhdWQiOiJobXNpdGstNWNhZDgiLCJhdXRoX3RpbWUiOjE2NzE2ODk2OTgsInVzZXJfaWQiOiJyY2Y0UVQwRVhzVFQxUW16U0FSSjQ5QVJvTVUyIiwic3ViIjoicmNmNFFUMEVYc1RUMVFtelNBUko0OUFSb01VMiIsImlhdCI6MTY3MTY4OTY5OCwiZXhwIjoxNjcxNjkzMjk4LCJlbWFpbCI6ImFkbWluQHRlc3QuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImFkbWluQHRlc3QuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.a90TBbezi6yC6swW_6GlNFFZHnZfkdgNwvN_qmlbteD9TjzpTqsGF0NOIhxTLT-LwnJddDIdkCn9XOe4wt2Nl2TcjWYz52vdDQTUiM2LB8pUBGlEs085ABSTrkzQntUhShKpR4Cz2ztwjwp6x6RLSMWjQ1MEa6psKbw-eGnf9tbh7USKIYTTtVRqe0HYn_FI_5INtIYiUBgRDXZGMFVrhjBcEWhVxDBiL78Uu8-uD7YaRQjFxPyXnHym-czx_KnZkmX8P8JaRwcdRDkJbANci6m1XfZFq00aSoo1J297cNo3GltCrmtJDOONUKNlFENb_pZIqoajM6EeyImNeGBSVw",
+								"description": "Admin",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImFmZjFlNDJlNDE0M2I4MTQxM2VjMTI1MzQwOTcwODUxZThiNDdiM2YiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoia2xrIiwicm9sZSI6InBhdGllbnQiLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vaG1zaXRrLTVjYWQ4IiwiYXVkIjoiaG1zaXRrLTVjYWQ4IiwiYXV0aF90aW1lIjoxNjcxNjk4NTY4LCJ1c2VyX2lkIjoiTm9aWjdpT3dpYmJ1U1dveWk5SzhoalRkQk9qMiIsInN1YiI6Ik5vWlo3aU93aWJidVNXb3lpOUs4aGpUZEJPajIiLCJpYXQiOjE2NzE2OTg1NjgsImV4cCI6MTY3MTcwMjE2OCwiZW1haWwiOiJrbGtAcGFjaWVudGUuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImtsa0BwYWNpZW50ZS5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.VUDR9dWYyCM4sX2J4bgL9O2IhGOb0xEMByQvEHeGarAxj7cl1dyDTx4OUfyXNghxbi4DTbGE7ros_T1XYnsZF-RLLsJ2kUvRRKaXClRQgdO2rQAS0hlw1CIUvmy5nn6m1xCaaC9j8-pYofiYPrHsptuHiw5kGwn84swngZnp2t3rv1XludBuL6eceiJkv9F92DZVGv2-Eap5lrOi4ti-8-rN1oe1djBTkfXd8ZQ-DYRWmOWGrURuyhn9uKzpNOyjFHbnfLyLdE19jxS6SnRRCxZjP8jePGYsBeGHYaBw1RSP246ct-zoc7VldvLYdN8ZUPW3Amg9HX7JB5vEdpCN6Q",
+								"description": "Patient",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/appointment/?limit=1&offset=2&doctor_id=8Ui00Lm2lpRdSwOy9WYbkqTJBXH2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"appointment",
+								""
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "1"
+								},
+								{
+									"key": "offset",
+									"value": "2"
+								},
+								{
+									"key": "user_id",
+									"value": "NoZZ7iOwibbuSWoyi9K8hjTdBOj2",
+									"disabled": true
+								},
+								{
+									"key": "doctor_id",
+									"value": "8Ui00Lm2lpRdSwOy9WYbkqTJBXH2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Appointment by patient id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImFmZjFlNDJlNDE0M2I4MTQxM2VjMTI1MzQwOTcwODUxZThiNDdiM2YiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiU3VwZXJBZG1pbiIsInJvbGUiOiJhZG1pbiIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9obXNpdGstNWNhZDgiLCJhdWQiOiJobXNpdGstNWNhZDgiLCJhdXRoX3RpbWUiOjE2NzE2OTgwNDEsInVzZXJfaWQiOiJyY2Y0UVQwRVhzVFQxUW16U0FSSjQ5QVJvTVUyIiwic3ViIjoicmNmNFFUMEVYc1RUMVFtelNBUko0OUFSb01VMiIsImlhdCI6MTY3MTY5ODA0MSwiZXhwIjoxNjcxNzAxNjQxLCJlbWFpbCI6ImFkbWluQHRlc3QuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImFkbWluQHRlc3QuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.WHX-hmG5oBYCD23BAQeqOd_HCoTKXED-NnmfwOBUCo6r6YY6tre1K7qJ5t6_5Vkpri3nc9z8bw1opNYnVRla4DiYYZdo58Q9xMGuZDA-8eGCm8u0hqVLECTnWJ23xqlfOb62vYOd5uAa0FURAkqhKaQ61pDEMLiB4I0RvfYGD4S9wpza4lRTOryalkXQMKq0mfw3q1cNGhelFDsYYoIZahDvBp5SLb9BY3FOfMVJKyIU9J07pvZHTSPn1AN8u81qLTHFOaRfDS_noSUveZ2ySd9HLcql_ud6ejddMZZM2fHSJbDW0A_aKxo2gYazb4kLTBbCLhKsetn5utbSfkUheg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/appointment/patient/NoZZ7iOwibbuSWoyi9K8hjTdBOj2?",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"appointment",
+								"patient",
+								"NoZZ7iOwibbuSWoyi9K8hjTdBOj2"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Appointment by doctor id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImFmZjFlNDJlNDE0M2I4MTQxM2VjMTI1MzQwOTcwODUxZThiNDdiM2YiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiU3VwZXJBZG1pbiIsInJvbGUiOiJhZG1pbiIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9obXNpdGstNWNhZDgiLCJhdWQiOiJobXNpdGstNWNhZDgiLCJhdXRoX3RpbWUiOjE2NzE2OTgwNDEsInVzZXJfaWQiOiJyY2Y0UVQwRVhzVFQxUW16U0FSSjQ5QVJvTVUyIiwic3ViIjoicmNmNFFUMEVYc1RUMVFtelNBUko0OUFSb01VMiIsImlhdCI6MTY3MTY5ODA0MSwiZXhwIjoxNjcxNzAxNjQxLCJlbWFpbCI6ImFkbWluQHRlc3QuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImFkbWluQHRlc3QuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.WHX-hmG5oBYCD23BAQeqOd_HCoTKXED-NnmfwOBUCo6r6YY6tre1K7qJ5t6_5Vkpri3nc9z8bw1opNYnVRla4DiYYZdo58Q9xMGuZDA-8eGCm8u0hqVLECTnWJ23xqlfOb62vYOd5uAa0FURAkqhKaQ61pDEMLiB4I0RvfYGD4S9wpza4lRTOryalkXQMKq0mfw3q1cNGhelFDsYYoIZahDvBp5SLb9BY3FOfMVJKyIU9J07pvZHTSPn1AN8u81qLTHFOaRfDS_noSUveZ2ySd9HLcql_ud6ejddMZZM2fHSJbDW0A_aKxo2gYazb4kLTBbCLhKsetn5utbSfkUheg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/doctor/8Ui00Lm2lpRdSwOy9WYbkqTJBXH2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"doctor",
+								"8Ui00Lm2lpRdSwOy9WYbkqTJBXH2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Doctor",
+			"item": [
+				{
+					"name": "Creat Doctor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImFmZjFlNDJlNDE0M2I4MTQxM2VjMTI1MzQwOTcwODUxZThiNDdiM2YiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiU3VwZXJBZG1pbiIsInJvbGUiOiJhZG1pbiIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9obXNpdGstNWNhZDgiLCJhdWQiOiJobXNpdGstNWNhZDgiLCJhdXRoX3RpbWUiOjE2NzE2OTgwNDEsInVzZXJfaWQiOiJyY2Y0UVQwRVhzVFQxUW16U0FSSjQ5QVJvTVUyIiwic3ViIjoicmNmNFFUMEVYc1RUMVFtelNBUko0OUFSb01VMiIsImlhdCI6MTY3MTY5ODA0MSwiZXhwIjoxNjcxNzAxNjQxLCJlbWFpbCI6ImFkbWluQHRlc3QuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImFkbWluQHRlc3QuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.WHX-hmG5oBYCD23BAQeqOd_HCoTKXED-NnmfwOBUCo6r6YY6tre1K7qJ5t6_5Vkpri3nc9z8bw1opNYnVRla4DiYYZdo58Q9xMGuZDA-8eGCm8u0hqVLECTnWJ23xqlfOb62vYOd5uAa0FURAkqhKaQ61pDEMLiB4I0RvfYGD4S9wpza4lRTOryalkXQMKq0mfw3q1cNGhelFDsYYoIZahDvBp5SLb9BY3FOfMVJKyIU9J07pvZHTSPn1AN8u81qLTHFOaRfDS_noSUveZ2ySd9HLcql_ud6ejddMZZM2fHSJbDW0A_aKxo2gYazb4kLTBbCLhKsetn5utbSfkUheg",
+								"description": "Admin",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"displayName\": \"Doctor_Good\",\n    \"email\": \"good@test.com\",\n    \"password\": \"test1234\",\n    \"first_name\": \"Good\",\n    \"last_name\": \"Doctor\",\n    \"address\": \"calle 34 #345\",\n    \"phone_number\":\"+1 809-513-9862\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/doctor/newDoctor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"doctor",
+								"newDoctor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Doctor by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImFmZjFlNDJlNDE0M2I4MTQxM2VjMTI1MzQwOTcwODUxZThiNDdiM2YiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiU3VwZXJBZG1pbiIsInJvbGUiOiJhZG1pbiIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9obXNpdGstNWNhZDgiLCJhdWQiOiJobXNpdGstNWNhZDgiLCJhdXRoX3RpbWUiOjE2NzE2OTgwNDEsInVzZXJfaWQiOiJyY2Y0UVQwRVhzVFQxUW16U0FSSjQ5QVJvTVUyIiwic3ViIjoicmNmNFFUMEVYc1RUMVFtelNBUko0OUFSb01VMiIsImlhdCI6MTY3MTY5ODA0MSwiZXhwIjoxNjcxNzAxNjQxLCJlbWFpbCI6ImFkbWluQHRlc3QuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImFkbWluQHRlc3QuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.WHX-hmG5oBYCD23BAQeqOd_HCoTKXED-NnmfwOBUCo6r6YY6tre1K7qJ5t6_5Vkpri3nc9z8bw1opNYnVRla4DiYYZdo58Q9xMGuZDA-8eGCm8u0hqVLECTnWJ23xqlfOb62vYOd5uAa0FURAkqhKaQ61pDEMLiB4I0RvfYGD4S9wpza4lRTOryalkXQMKq0mfw3q1cNGhelFDsYYoIZahDvBp5SLb9BY3FOfMVJKyIU9J07pvZHTSPn1AN8u81qLTHFOaRfDS_noSUveZ2ySd9HLcql_ud6ejddMZZM2fHSJbDW0A_aKxo2gYazb4kLTBbCLhKsetn5utbSfkUheg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/doctor/8Ui00Lm2lpRdSwOy9WYbkqTJBXH2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"doctor",
+								"8Ui00Lm2lpRdSwOy9WYbkqTJBXH2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Specialization",
+			"item": [
+				{
+					"name": "Creat Specialization",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImFmZjFlNDJlNDE0M2I4MTQxM2VjMTI1MzQwOTcwODUxZThiNDdiM2YiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiU3VwZXJBZG1pbiIsInJvbGUiOiJhZG1pbiIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9obXNpdGstNWNhZDgiLCJhdWQiOiJobXNpdGstNWNhZDgiLCJhdXRoX3RpbWUiOjE2NzE2ODAxODcsInVzZXJfaWQiOiJyY2Y0UVQwRVhzVFQxUW16U0FSSjQ5QVJvTVUyIiwic3ViIjoicmNmNFFUMEVYc1RUMVFtelNBUko0OUFSb01VMiIsImlhdCI6MTY3MTY4MDE4NywiZXhwIjoxNjcxNjgzNzg3LCJlbWFpbCI6ImFkbWluQHRlc3QuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImFkbWluQHRlc3QuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.audUprYomPsDC-bGfXZEqvYDOp7Yfsw8YwtQP0iSOnwyzkABC5JrGijTSRNNEMGbDGoBrWd00Eu0n1SMs1CORhYemckmPyj9CUlikOdCQzpKhRW01i3pZMHCrXXGLh3Yeu03psrl9SAxBXi3Kj0MkbbbCoyUTWrDcuH7Bi27-ACUhQr_Old1O5XPc3gsoe2V48xH81D4aLpPlYEa8gMAumFJof7SXCz31pPndUQIUHqMLhjYtQVYphcEt5Ybmq9RoRvmus9vqD5py3J6ZtKoeGAMx-iTDSbRp5UnohDxfUzjc7zea8pOxwytkiaVbrXXPY67L7tCC2jSqGuJbtOW4A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"specialization_name\": \"Urology\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/specialization/newSpecialization",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"specialization",
+								"newSpecialization"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Creat Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"displayName\": \"SuperAdmin-2\",\n    \"email\": \"admin2@test.com\",\n    \"password\": \"admin1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/admin/newAdmin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"admin",
+								"newAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Disable Admin",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImFmZjFlNDJlNDE0M2I4MTQxM2VjMTI1MzQwOTcwODUxZThiNDdiM2YiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiU3VwZXJBZG1pbiIsInJvbGUiOiJhZG1pbiIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9obXNpdGstNWNhZDgiLCJhdWQiOiJobXNpdGstNWNhZDgiLCJhdXRoX3RpbWUiOjE2NzE2OTgwNDEsInVzZXJfaWQiOiJyY2Y0UVQwRVhzVFQxUW16U0FSSjQ5QVJvTVUyIiwic3ViIjoicmNmNFFUMEVYc1RUMVFtelNBUko0OUFSb01VMiIsImlhdCI6MTY3MTY5ODA0MSwiZXhwIjoxNjcxNzAxNjQxLCJlbWFpbCI6ImFkbWluQHRlc3QuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImFkbWluQHRlc3QuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.WHX-hmG5oBYCD23BAQeqOd_HCoTKXED-NnmfwOBUCo6r6YY6tre1K7qJ5t6_5Vkpri3nc9z8bw1opNYnVRla4DiYYZdo58Q9xMGuZDA-8eGCm8u0hqVLECTnWJ23xqlfOb62vYOd5uAa0FURAkqhKaQ61pDEMLiB4I0RvfYGD4S9wpza4lRTOryalkXQMKq0mfw3q1cNGhelFDsYYoIZahDvBp5SLb9BY3FOfMVJKyIU9J07pvZHTSPn1AN8u81qLTHFOaRfDS_noSUveZ2ySd9HLcql_ud6ejddMZZM2fHSJbDW0A_aKxo2gYazb4kLTBbCLhKsetn5utbSfkUheg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"disabled\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/admin/disable/vsFizNc6VdVJgMnprDcDWHk8ij33",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"admin",
+								"disable",
+								"vsFizNc6VdVJgMnprDcDWHk8ij33"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Firebase Token Admin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.globals.set(\"id_token\", jsonData.idToken);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"email\": \"admin@test.com\",\n    \"password\": \"admin1234\",\n    \"returnSecureToken\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyB-r2A7U7C8EmDi107357_cF00MomKdN0E\n",
+					"protocol": "https",
+					"host": [
+						"www",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"identitytoolkit",
+						"v3",
+						"relyingparty",
+						"verifyPassword"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "AIzaSyB-r2A7U7C8EmDi107357_cF00MomKdN0E\n"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Firebase Token Patient",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.globals.set(\"id_token\", jsonData.idToken);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"klk@paciente.com\",\n    \"password\": \"test1234\",\n    \"returnSecureToken\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyB-r2A7U7C8EmDi107357_cF00MomKdN0E\n",
+					"protocol": "https",
+					"host": [
+						"www",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"identitytoolkit",
+						"v3",
+						"relyingparty",
+						"verifyPassword"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "AIzaSyB-r2A7U7C8EmDi107357_cF00MomKdN0E\n"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Firebase Token Doctor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.globals.set(\"id_token\", jsonData.idToken);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"test4@test.com\",\n    \"password\": \"test1234\",\n    \"returnSecureToken\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyB-r2A7U7C8EmDi107357_cF00MomKdN0E\n",
+					"protocol": "https",
+					"host": [
+						"www",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"identitytoolkit",
+						"v3",
+						"relyingparty",
+						"verifyPassword"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "AIzaSyB-r2A7U7C8EmDi107357_cF00MomKdN0E\n"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
